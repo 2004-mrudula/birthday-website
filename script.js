@@ -4,16 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Surprise Page Functionality
     const blowButton = document.getElementById('blowButton');
-    const cakeWithCandles = document.getElementById('cake');
-    const cakeWithoutCandles = document.getElementById('cakeWithoutCandles');
+    const flames = document.querySelectorAll('.flame'); // Get all flame elements
     const confettiContainer = document.getElementById('confetti-container');
 
     if (blowButton) {
         blowButton.addEventListener('click', function() {
-            cakeWithCandles.style.display = 'none';
-            cakeWithoutCandles.style.display = 'block';
+            // Trigger the "blowing" animation on all flames
+            flames.forEach(flame => {
+                flame.classList.add('blown');
+            });
+
+            // Hide the button after blowing
             blowButton.style.display = 'none';
-            startConfetti();
+
+            // Start confetti after a short delay (to see the blowing)
+            setTimeout(startConfetti, 500); // Adjust delay as needed
         });
     }
 
@@ -28,19 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
             confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
             confettiContainer.appendChild(confetti);
         }
-        // You might want to stop the confetti animation after some time
         setTimeout(() => {
             confettiContainer.innerHTML = ''; // Clear confetti
         }, 5000);
     }
 
-    // Balloon Animation (Introduction Page) - Already handled in CSS
-
-    // Ensure audio plays on page load (might need user interaction on some browsers)
+    // Ensure audio plays on page load
     if (birthdaySong) {
         birthdaySong.play().catch(error => {
             console.log("Autoplay prevented:", error);
-            // Optionally display a message to the user to interact with the page to play the music
         });
     }
 });
