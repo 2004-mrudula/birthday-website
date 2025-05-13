@@ -1,0 +1,157 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e0f7fa, #fce4ec, #fff8e1); /* Pastel Gradient */
+    background-attachment: fixed;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #555;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+}
+
+nav a.active {
+    background-color: #cddc39; /* A pastel green/yellow */
+    color: white;
+}
+
+/* Introduction Page Styles */
+.intro-page .balloons {
+    position: relative;
+    height: 200px; /* Adjust as needed */
+}
+
+.intro-page .balloon {
+    position: absolute;
+    bottom: -50px;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #90caf9; /* Pastel Blue */
+    opacity: 0.7;
+    animation: float 5s infinite alternate;
+    /* Add more specific colors and positioning with nth-child */
+}
+
+.intro-page .balloon:nth-child(2) {
+    left: 10%;
+    background-color: #f48fb1; /* Pastel Pink */
+    animation-delay: 1s;
+}
+
+.intro-page .balloon:nth-child(3) {
+    left: 70%;
+    background-color: #a5d6a7; /* Pastel Green */
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-80px); }
+}
+
+.intro-page .pictures {
+    margin-bottom: 20px;
+}
+
+.intro-page .pictures img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.intro-page .wish h1 {
+    color: #e91e63; /* A brighter pastel pink */
+}
+
+/* Message Page Styles */
+.message-page .message-content {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.message-page .message-content h2 {
+    color: #673ab7; /* Pastel Purple */
+    margin-bottom: 15px;
+}
+
+/* Surprise Page Styles */
+.surprise-page .cake-container {
+    position: relative;
+}
+
+.surprise-page #cake, .surprise-page #cakeWithoutCandles {
+    max-width: 300px;
+    height: auto;
+}
+
+.surprise-page #blowButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ffcdd2; /* Light Pastel Red */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.surprise-page #blowButton:hover {
+    background-color: #f48fb1;
+}
+
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    animation: confettiFall 2s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 1;
+        transform: translateY(-50px) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(500px) rotate(720deg);
+    }
+}
