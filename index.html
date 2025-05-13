@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, Snehal!</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <title>Happy Birthday, Mom!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="intro-header">
-            <img src="assets/images/birthday-background.jpg" alt="Birthday Background" class="bg-img">
-            <div class="content">
-                <h1 class="title">Happy Birthday, Snehal!</h1>
-                <p class="subtitle">Celebrating you today and always</p>
-                <div class="button-container">
-                    <a href="message.html" class="btn">Send Birthday Wish</a>
-                </div>
+    <div class="container intro-page">
+        <div class="balloons">
+            <div class="balloon">🎈</div>
+            <div class="balloon">🎈</div>
             </div>
-        </header>
+        <div class="pictures">
+            <img src="image1.jpg" alt="Picture 1">
+            <img src="image2.jpg" alt="Picture 2">
+        </div>
+        <div class="wish">
+            <h1>Happy Birthday, dearest Mom! 🎉</h1>
+            <p>Wishing you a day filled with joy, love, and everything that makes you smile. We're so excited to celebrate you!</p>
+        </div>
+        <audio id="birthdaySong" src="happy_birthday.mp3" autoplay loop></audio>
+        <nav>
+            <a href="index.html" class="active">Introduction</a>
+            <a href="message.html">Message</a>
+            <a href="surprise.html">Surprise</a>
+        </nav>
     </div>
-    <audio id="background-music" loop>
-        <source src="assets/music/birthday-music.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-    <script src="scripts/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
